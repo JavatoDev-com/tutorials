@@ -20,6 +20,9 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.5.RELEASE'
+    implementation 'io.github.openfeign:feign-okhttp:11.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
