@@ -1,0 +1,52 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+plugins {
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.javatodev'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation 'org.flywaydb:flyway-core'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task flywayNewTemplate {
+    description 'Creates new sql migration template.'
+    doLast {
+        def version = '1.0'
+        def marker = LocalDateTime.now().format(DateTimeFormatter.ofPattern('yyyyMMddHHmmss'))
+        String fileName = "V${version}.${marker}__RENAME_ME.sql"
+
+        def flywayLocation = "${sourceSets.main.resources.sourceDirectories.first().path}/db/migration"
+        new File("${flywayLocation}/${fileName}").createNewFile()
+
+        println "Created a new migration file: ${fileName}"
+    }
+}
