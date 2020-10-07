@@ -1,4 +1,4 @@
-    ## SOURCE CODES FOR TUTORIALS WRITTEN ON [JAVATODEV.COM](http://javatodev.com)
+# SOURCE CODES FOR TUTORIALS WRITTEN ON [JAVATODEV.COM](http://javatodev.com)
 
 Tutorial Series
 
