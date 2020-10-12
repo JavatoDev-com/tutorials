@@ -7,3 +7,4 @@ Tutorial Series
 3. [Consuming REST API Using Feign Client in Spring Boot](https://javatodev.com/consuming-rest-api-using-feign-client-in-spring-boot/)
 4. [Serve Image Stored in a Server Using Spring Boot](https://javatodev.com/serve-image-stored-in-server-using-spring-boot/)
 5. [Database Migration Using Flyway in Spring Boot](https://javatodev.com/flyway-spring-boot/)
+6. [Exception Handling Spring Boot REST API](https://javatodev.com/exception-handling-spring-boot/) 
