@@ -1,8 +1,11 @@
 package com.javatodev.api.model;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import java.util.Set;
+import java.util.List;
+
 import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,8 +23,11 @@ public class Member {
     private String firstName;
     private String lastName;
 
+    @Enumerated
+    private MemberStatus status;
+
     @JsonBackReference
     @OneToMany(mappedBy = "member",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Lend> lends;
+    private List<Lend> lends;
 
 }

@@ -1,5 +1,7 @@
 package com.javatodev.api.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.time.Instant;
 import javax.persistence.*;
 import lombok.Getter;
@@ -16,16 +18,21 @@ public class Lend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String status;
+
+    @Enumerated(EnumType.ORDINAL)
+    private LendStatus status;
+
     private Instant startOn;
     private Instant dueOn;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
+    @JsonManagedReference
     private Book book;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
+    @JsonManagedReference
     private Member member;
 
 

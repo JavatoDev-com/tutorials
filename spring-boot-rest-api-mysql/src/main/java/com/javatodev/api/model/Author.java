@@ -3,7 +3,6 @@ package com.javatodev.api.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.*;
 
@@ -26,7 +25,6 @@ public class Author {
 
     private String lastName;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "author",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Book> books;
 
