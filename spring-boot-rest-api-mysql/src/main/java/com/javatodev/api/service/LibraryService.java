@@ -70,6 +70,7 @@ public class LibraryService {
     public Member createMember(MemberCreationRequest request) {
         Member member = new Member();
         BeanUtils.copyProperties(request, member);
+        member.setStatus(MemberStatus.ACTIVE);
         return memberRepository.save(member);
     }
 
@@ -90,25 +91,25 @@ public class LibraryService {
         return authorRepository.save(author);
     }
 
-    public List<String> lendABook (List<BookLendRequest> list) {
+    public List<String> lendABook (BookLendRequest request) {
+
+        Optional<Member> memberForId = memberRepository.findById(request.getMemberId());
+        if (!memberForId.isPresent()) {
+            throw new EntityNotFoundException("Member not present in the database");
+        }
+
+        Member member = memberForId.get();
+        if (member.getStatus() != MemberStatus.ACTIVE) {
+            throw new RuntimeException("User is not active to proceed a lending.");
+        }
 
         List<String> booksApprovedToBurrow = new ArrayList<>();
 
-        list.forEach(bookLendRequest -> {
+        request.getBookIds().forEach(bookId -> {
 
-            Optional<Book> bookForId = bookRepository.findById(bookLendRequest.getBookId());
+            Optional<Book> bookForId = bookRepository.findById(bookId);
             if (!bookForId.isPresent()) {
                 throw new EntityNotFoundException("Cant find any book under given ID");
-            }
-
-            Optional<Member> memberForId = memberRepository.findById(bookLendRequest.getMemberId());
-            if (!memberForId.isPresent()) {
-                throw new EntityNotFoundException("Member not present in the database");
-            }
-
-            Member member = memberForId.get();
-            if (member.getStatus() != MemberStatus.ACTIVE) {
-                throw new RuntimeException("User is not active to proceed a lending.");
             }
 
             Optional<Lend> burrowedBook = lendRepository.findByBookAndStatus(bookForId.get(), LendStatus.BURROWED);

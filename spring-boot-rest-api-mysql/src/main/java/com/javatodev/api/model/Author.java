@@ -25,6 +25,7 @@ public class Author {
 
     private String lastName;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "author",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Book> books;
 

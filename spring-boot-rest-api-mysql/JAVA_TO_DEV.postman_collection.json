@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "c0dc7ed5-c62d-43b3-8294-55352662c030",
+		"name": "JAVA_TO_DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MYSQL",
+			"item": [
+				{
+					"name": "CREATE_AUTHOR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"John\",\n\t\"lastName\": \"Doe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_BOOK",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"The Body: A Guide for Occupants\",\n\t\"isbn\": \"0316535575\",\n\t\"authorId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_A_MEMBER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Johannes\",\n\t\"lastName\": \"Peters\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library/member",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ_BOOKS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ_BOOK_BY_ISBN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library/book?isbn=0316535575",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book"
+							],
+							"query": [
+								{
+									"key": "isbn",
+									"value": "0316535575"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ_BOOK_BY_ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LEND_A_BOOK",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookIds\": [\n        1\n    ],\n    \"memberId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library/book/lend",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book",
+								"lend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
