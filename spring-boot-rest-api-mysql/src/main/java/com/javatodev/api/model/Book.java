@@ -1,16 +1,25 @@
 package com.javatodev.api.model;
 
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import java.util.List;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "book")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
 
     @Id
@@ -21,11 +30,14 @@ public class Book {
 
     private String isbn;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "author_id")
+    @JsonManagedReference
     private Author author;
 
-    @OneToMany(mappedBy = "book",fetch = FetchType.LAZY)
-    private Set<Lend> lends;
+    @JsonBackReference
+    @OneToMany(mappedBy = "book",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Lend> lends;
+
 
 }
