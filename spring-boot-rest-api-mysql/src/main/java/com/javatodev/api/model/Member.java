@@ -23,7 +23,7 @@ public class Member {
     private String firstName;
     private String lastName;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private MemberStatus status;
 
     @JsonBackReference
