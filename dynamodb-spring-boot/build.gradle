@@ -23,8 +23,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'com.amazonaws:aws-java-sdk-dynamodb:1.11.892'
-    implementation 'com.github.derjust:spring-data-dynamodb:jar:5.1.0'
-
+    compile group: 'com.github.derjust', name: 'spring-data-dynamodb', version: '5.1.0'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
@@ -32,4 +31,14 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+ext {
+    springDataVersion = 'Neumann-SR5'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.data:spring-data-releasetrain:${springDataVersion}"
+    }
 }
