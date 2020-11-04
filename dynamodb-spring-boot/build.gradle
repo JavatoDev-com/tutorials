@@ -23,7 +23,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'com.amazonaws:aws-java-sdk-dynamodb:1.11.892'
-    compile group: 'com.github.derjust', name: 'spring-data-dynamodb', version: '5.1.0'
+    implementation 'com.github.derjust:spring-data-dynamodb:5.1.0'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
