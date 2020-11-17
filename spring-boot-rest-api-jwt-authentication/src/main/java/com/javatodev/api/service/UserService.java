@@ -32,6 +32,7 @@ public class UserService {
         }
         apiUser.setUsername(userCreateRequest.getUsername());
         apiUser.setPassword(passwordEncoder.encode(userCreateRequest.getPassword()));
+        apiUser.setRole(userCreateRequest.getRole());
         userRepository.save(apiUser);
     }
 }
