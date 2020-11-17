@@ -13,6 +13,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import sun.security.util.SecurityConstants;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -50,6 +52,17 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             .withSubject(((User) auth.getPrincipal()).getUsername())
             .withExpiresAt(new Date(System.currentTimeMillis() + AuthenticationConfigConstants.EXPIRATION_TIME))
             .sign(Algorithm.HMAC512(AuthenticationConfigConstants.SECRET.getBytes()));
+
+        //START - SENDING JWT AS A BODY
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(
+            "{\"" + AuthenticationConfigConstants.HEADER_STRING + "\":\"" + AuthenticationConfigConstants.TOKEN_PREFIX + token + "\"}"
+        );
+        //END - SENDING JWT AS A BODY
+
+        //START - SENDING JWT AS A HEADER
         response.addHeader(AuthenticationConfigConstants.HEADER_STRING, AuthenticationConfigConstants.TOKEN_PREFIX + token);
+        //END - SENDING JWT AS A HEADER
     }
 }
