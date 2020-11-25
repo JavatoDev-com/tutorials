@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping(value = "/api/library")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class LibraryController {
 
     private final LibraryService libraryService;
@@ -41,9 +42,20 @@ public class LibraryController {
         return ResponseEntity.ok(libraryService.createBook(request));
     }
 
+
+    @PatchMapping("/book/{bookId}")
+    public ResponseEntity<Book> updateBook (@PathVariable("bookId") Long bookId, @RequestBody BookCreationRequest request) {
+        return ResponseEntity.ok(libraryService.updateBook(bookId, request));
+    }
+
     @PostMapping("/author")
     public ResponseEntity<Author> createAuthor (@RequestBody AuthorCreationRequest request) {
         return ResponseEntity.ok(libraryService.createAuthor(request));
+    }
+
+    @GetMapping("/author")
+    public ResponseEntity<List<Author>> readAuthors () {
+        return ResponseEntity.ok(libraryService.readAuthors());
     }
 
     @DeleteMapping("/book/{bookId}")
@@ -55,6 +67,11 @@ public class LibraryController {
     @PostMapping("/member")
     public ResponseEntity<Member> createMember (@RequestBody MemberCreationRequest request) {
         return ResponseEntity.ok(libraryService.createMember(request));
+    }
+
+    @GetMapping("/member")
+    public ResponseEntity<List<Member>> readMembers () {
+        return ResponseEntity.ok(libraryService.readMembers());
     }
 
     @PatchMapping("/member/{memberId}")

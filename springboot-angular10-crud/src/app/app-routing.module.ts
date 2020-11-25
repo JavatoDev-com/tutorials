@@ -7,7 +7,7 @@ import { BookupdateComponent } from './bookupdate/bookupdate.component';
 import { MemberComponent } from './member/member.component';
 
 const routes: Routes = [
-  {path: '', component: AuthorComponent},
+  {path: '', component: LibraryComponent},
   {path: 'author', component: AuthorComponent},
   {path: 'book', component: BookComponent},
   {path: 'library', component: LibraryComponent},

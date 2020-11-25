@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-12">
+    <div *ngIf="lendingStatus" class="alert alert-success" role="alert">
+        Book lending request successfully completed
+      </div>
+    <h1>Welcome to the library</h1>
+    <p>Library system by Javatodev.com.</p>
+  </div>
+  <hr/>
+  <div class="col-md-6">
+    <h4>Burrow a Book - Book Lending</h4>
+    <div class="form-group">
+      <div class="form-group">
+        <label for="author">Select Member</label>
+        <select class="custom-select" [(ngModel)]="selectedMember">
+          <option *ngFor="let member of members" [value]="member.id">
+            {{ member.firstName }} {{ member.lastName }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="author">Select Books</label>
+      <div class="input-group">
+        <select id="book_selection" class="custom-select" [(ngModel)]="selectedBook" >
+            <option *ngFor="let book of books" [ngValue]="book">
+              {{ book.name }}
+            </option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="addBook()">Add Book</button>
+          </div>
+      </div>
+    </div>
+    
+    <button class="btn btn-success" (click)="lend()">Lend the books</button>
+
+  </div>
+  <div class="col-md-6">
+
+    Selected Books
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of selectedBooks">
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.isbn}}</td>
+            <td>
+            <a class="nav-link" (click)="removeBook(book.id)">
+                <img src="/assets/img/archive.svg" alt="" width="16" height="16" title="Bootstrap" />
+              </a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

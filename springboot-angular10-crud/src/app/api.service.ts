@@ -43,7 +43,7 @@ export class ApiService {
   }
 
   lendABook(lend) : Observable<any> {
-    return this.apiClient.post(apiBaseUrl+"/lend", lend);
+    return this.apiClient.post(apiBaseUrl+"/book/lend", lend);
   }
 
   updateBook(bookId, updateData): Observable<any> {
