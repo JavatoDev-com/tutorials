@@ -1,1 +1,67 @@
-<p>book works!</p>
+<div class="row">
+    <div class="col-md-6">
+      <div *ngIf="deletionStatus" class="alert alert-success" role="alert">
+        Book Deletion Successfully Completed.
+      </div>
+      <h4>Book Registration</h4>
+      <form [formGroup]="registerBookForm" (ngSubmit)="onSubmit(registerBookForm.value)">      
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="isbn">ISBN</label>
+          <input
+            type="text"
+            class="form-control"
+            id="isbn"
+            formControlName="isbn"
+          />
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <select class="custom-select" formControlName="authorId">
+            <option *ngFor="let author of authors" [value]="author.id">
+              {{author.firstName}} {{author.lastName}}
+            </option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h4>Registered Books</h4>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.id}}</td>
+                <td>{{book.name}}</td>
+                <td>{{book.isbn}}</td>
+                <td>
+                <a class="nav-link" (click)="deleteBook(book.id)">
+                    <img src="/assets/img/archive.svg" alt="" width="16" height="16" title="Bootstrap" />
+                  </a>
+                  <a class="nav-link" href="/book/{{book.id}}">
+                    <img src="/assets/img/pencil-square.svg" alt="" width="16" height="16" title="Bootstrap" />
+                  </a>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  

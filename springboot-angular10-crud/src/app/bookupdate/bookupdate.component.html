@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-6">
+        <div *ngIf="updateSuccess" class="alert alert-success" role="alert">
+            Book Update Successfully Completed.
+          </div>
+      <h4>Book Update</h4>
+      <form [formGroup]="updateBookForm" (ngSubmit)="onSubmit(updateBookForm.value)">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+            />
+        </div>
+        <div class="form-group">
+          <label for="isbn">ISBN</label>
+          <input
+            type="text"
+            class="form-control"
+            id="isbn"
+            formControlName="isbn"
+          />
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <select class="custom-select" formControlName="authorId">
+              <option *ngFor="let author of authors" [value]="author.id">
+                {{author.firstName}} {{author.lastName}}
+              </option>
+            </select>
+          </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+  </div>
+  
