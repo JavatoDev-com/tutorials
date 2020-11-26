@@ -11,4 +11,6 @@ Tutorial Series
 7. [Spring Boot REST API Using JPA, Hibernate, MySQL Tutorial](https://javatodev.com/spring-boot-mysql/) 
 8. [Guide to use Lombok In Spring Boot](https://javatodev.com/lombok-spring-boot/) 
 9. [Spring Boot REST API Using Spring Data MongoDB Tutorial](https://javatodev.com/spring-boot-mongodb-crud-api/) 
-10. [Spring Boot REST API CRUD With DynamoDB Tutorial](https://javatodev.com/spring-boot-dynamo-db-crud-tutorial/) 
+10. [Spring Boot REST API CRUD With DynamoDB Tutorial](https://javatodev.com/spring-boot-dynamo-db-crud-tutorial/)
+11. [Spring Boot JWT Authentication using Spring Security](https://javatodev.com/spring-boot-jwt-authentication/)
+12. [Angular 10 CRUD with Spring Boot REST API](https://javatodev.com/angular-10-crud-with-spring-boot-rest-api/)  

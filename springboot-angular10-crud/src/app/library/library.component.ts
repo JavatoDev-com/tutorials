@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { FormBuilder } from '@angular/forms';
 import _ from 'lodash';
 
 @Component({
@@ -17,8 +16,7 @@ export class LibraryComponent implements OnInit {
   selectedBook;
   lendingStatus;
 
-  constructor(private formBuilder: FormBuilder,
-    private apiService:ApiService) {
+  constructor(private apiService:ApiService) {
     }
 
   ngOnInit(): void {

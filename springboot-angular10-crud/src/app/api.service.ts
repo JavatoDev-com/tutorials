@@ -11,7 +11,7 @@ const apiBaseUrl = "http://localhost:8080/api/library"
 export class ApiService {
   
   
-  constructor(private apiClient : HttpClient) { }
+  constructor(private apiClient : HttpClient) {}
 
   getAllAuthors(): Observable<any> {
     return this.apiClient.get(apiBaseUrl+'/author');
