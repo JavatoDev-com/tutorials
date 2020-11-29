@@ -3,7 +3,6 @@ import axios from "axios";
 const apiClient = {
   async readAuthors() {
     const response = await axios.get("/author");
-    console.log(response.data);
     return response.data;
   },
   async createAuthor(requestData: any) {
@@ -19,6 +18,26 @@ const apiClient = {
     const response = await axios.post("/member", requestData);
     return response.data;
   },
+  async readBooks() {
+    const response = await axios.get("/book");
+    return response.data;
+  },
+  async createBook(requestData: any) {
+    const response = await axios.post("/book", requestData);
+    return response.data;
+  },
+  async deleteBook(bookId: number) {
+    const response = await axios.delete("/book/"+bookId);
+    return response.data;
+  },
+  async readBook(bookId: number) {
+    const response = await axios.get("/book/"+bookId);
+    return response.data;
+  },
+  async updateBook(bookId: number, requestData: any) {
+    const response = await axios.patch("/book/"+bookId, requestData);
+    return response.data;
+  }
 };
 
 export default apiClient;

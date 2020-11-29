@@ -78,6 +78,6 @@ export default {
   },
   mounted() {
     this.readMembers();
-  }
+  },
 };
 </script>
