@@ -28,6 +28,41 @@
           Lend The Books
         </v-btn>
       </v-col>
+      <v-col sm="8">
+        <h3>Selected Books</h3>
+        <v-simple-table>
+          <template v-slot:default>
+            <thead>
+              <tr>
+                <th class="text-left">
+                  ID
+                </th>
+                <th class="text-left">
+                  Name
+                </th>
+                <th class="text-left">
+                  ISBN
+                </th>
+                <th class="text-left">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="book in selectedBooks" :key="book.id">
+                <td>{{ book.id }}</td>
+                <td>{{ book.name }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>
+                  <v-btn icon color="pink" v-on:click="removeBook(book.id)">
+                    <v-icon>mdi-delete</v-icon>
+                  </v-btn>
+                </td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -39,7 +74,7 @@ export default {
   data() {
     return {
       bookLending: {
-        selectedBook: "",
+        selectedBook: 0,
         memberId: "",
       },
       members: [],
@@ -60,7 +95,14 @@ export default {
       console.log("Lending Books");
     },
     addBook: async function () {
-      console.log("Adding Book"+this.bookLending.selectedBook)
+      console.log("Adding Book"+this.bookLending.selectedBook);
+      const bookData = await api.readBook(this.bookLending.selectedBook);
+      console.log("Added Book "+bookData.id)
+      this.selectedBooks.push(bookData);
+    },
+    removeBook: function(bookId: number) {
+      console.log("Removing Book "+bookId);
+      this.selectedBooks.re
     }
   },
   mounted() {
