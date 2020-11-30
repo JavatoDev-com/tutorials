@@ -3,6 +3,11 @@
     <h1>Author Management UI</h1>
     <p>This UI developed to handle Author Registration.</p>
     <v-row>
+      <v-col sm="12">
+        <v-alert v-if="responseSuccess" dense text type="success">
+          You have successfully added author.
+        </v-alert>
+      </v-col>
       <v-col sm="6">
         <h3>Author Registration</h3>
         <v-text-field
@@ -59,6 +64,7 @@ export default {
         lastName: "",
       },
       registeredAuthors: [],
+      responseSuccess: false
     };
   },
   methods: {
@@ -75,6 +81,7 @@ export default {
       this.userRegistration.firstName = "";
       this.userRegistration.lastName = "";
       this.readAuthors();
+      this.responseSuccess = true;
     },
   },
   mounted() {

@@ -11,7 +11,6 @@ const apiClient = {
   },
   async readMembers() {
     const response = await axios.get("/member");
-    console.log(response.data);
     return response.data;
   },
   async createMember(requestData: any) {
@@ -28,6 +27,11 @@ const apiClient = {
   },
   async deleteBook(bookId: number) {
     const response = await axios.delete("/book/"+bookId);
+    return response.data;
+  },
+  async lendBook(requestData: any) {
+    console.log(requestData);
+    const response = await axios.post("/book/lend", requestData);
     return response.data;
   },
   async readBook(bookId: number) {

@@ -3,6 +3,11 @@
     <h1>Welcome to the library</h1>
     <p>Library system by Javatodev.com.</p>
     <v-row>
+      <v-col sm="12">
+        <v-alert v-if="responseSuccess" dense text type="success">
+          You have successfully added book lending request.
+        </v-alert>
+      </v-col>
       <v-col sm="4">
         <h3>Burrow a Book - Book Lending</h3>
         <v-autocomplete
@@ -66,7 +71,7 @@
     </v-row>
   </v-container>
 </template>
-<script lang="ts">
+<script>
 import api from "@/service/apiService";
 
 export default {
@@ -79,7 +84,8 @@ export default {
       },
       members: [],
       books: [],
-      selectedBooks: []
+      selectedBooks: [],
+      responseSuccess: false,
     };
   },
   methods: {
@@ -93,17 +99,34 @@ export default {
     },
     lendBook: async function() {
       console.log("Lending Books");
+      let selectedIds = [];
+      this.selectedBooks.forEach((book) => {
+        selectedIds.push(book.id);
+      });
+      console.log("Lending Books " + selectedIds);
+      const request = {
+        bookIds: selectedIds,
+        memberId: this.bookLending.memberId,
+      };
+      const bookLendingResponse = await api.lendBook(request);
+      console.log(bookLendingResponse);
+      this.responseSuccess = true;
+      this.selectedBooks = [];
+      this.bookLending.selectedBook = 0;
+      this.bookLending.memberId = "";
     },
-    addBook: async function () {
-      console.log("Adding Book"+this.bookLending.selectedBook);
+    addBook: async function() {
+      console.log("Adding Book" + this.bookLending.selectedBook);
       const bookData = await api.readBook(this.bookLending.selectedBook);
-      console.log("Added Book "+bookData.id)
+      console.log("Added Book " + bookData.id);
       this.selectedBooks.push(bookData);
     },
-    removeBook: function(bookId: number) {
-      console.log("Removing Book "+bookId);
-      this.selectedBooks.re
-    }
+    removeBook: function(bookId) {
+      console.log("Removing Book " + bookId);
+      this.selectedBooks = this.selectedBooks.filter(
+        (book) => book.id != bookId
+      );
+    },
   },
   mounted() {
     this.readBooks();

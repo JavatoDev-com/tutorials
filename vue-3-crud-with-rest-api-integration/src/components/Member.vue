@@ -3,6 +3,11 @@
     <h1>Member Management UI</h1>
     <p>This UI developed to handle Member Registration.</p>
     <v-row>
+      <v-col sm="12">
+        <v-alert v-if="responseSuccess" dense text type="success">
+          You have successfully added member.
+        </v-alert>
+      </v-col>
       <v-col sm="6">
         <h3>Member Registration</h3>
         <v-text-field
@@ -47,7 +52,7 @@
     </v-row>
   </v-container>
 </template>
-<script lang="ts">
+<script>
 import api from "@/service/apiService";
 export default {
   name: "Member",
@@ -58,6 +63,7 @@ export default {
         lastName: "",
       },
       registeredMembers: [],
+      responseSuccess: false,
     };
   },
   methods: {
@@ -74,6 +80,7 @@ export default {
       this.memberRegistration.firstName = "";
       this.memberRegistration.lastName = "";
       this.readMembers();
+      this.responseSuccess = true;
     },
   },
   mounted() {

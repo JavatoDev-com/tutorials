@@ -3,6 +3,11 @@
     <h1>Book Management UI</h1>
     <p>This UI developed to handle Book Registration and Edits</p>
     <v-row>
+      <v-col sm="12">
+        <v-alert v-if="responseSuccess" dense text type="success">
+          You have successfully added book.
+        </v-alert>
+      </v-col>
       <v-col sm="6">
         <h3>Book Registration</h3>
         <v-text-field
@@ -70,7 +75,7 @@
     </v-row>
   </v-container>
 </template>
-<script lang="ts">
+<script>
 import api from "@/service/apiService";
 export default {
   name: "Book",
@@ -83,7 +88,8 @@ export default {
       },
       authors: [],
       books: [],
-      editingId : 0
+      editingId : 0,
+      responseSuccess: false
     };
   },
   methods: {
@@ -98,6 +104,7 @@ export default {
       this.bookRegistration.isbn = "";
       this.bookRegistration.authorId = "";
       this.readBooks();
+      this.responseSuccess = true;
     },
     readAuthors: async function() {
       const data = await api.readAuthors();
@@ -107,11 +114,11 @@ export default {
       const data = await api.readBooks();
       this.books = data;
     },
-    deleteBook: async function(bookId : number) {
+    deleteBook: async function(bookId) {
       const data = await api.deleteBook(bookId);
       this.readBooks();
     },
-    initiateEdit: async function (bookId : number) {
+    initiateEdit: async function (bookId) {
       this.editingId = bookId;
       const bookData = await api.readBook(this.editingId);
       this.bookRegistration.bookname = bookData.name;
