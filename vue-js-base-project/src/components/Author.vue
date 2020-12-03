@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+<v-container>
     <h1>Author Management UI</h1>
     <p>This UI developed to handle Author Registration.</p>
     <v-row>
@@ -18,7 +18,7 @@
           v-model="userRegistration.lastName"
           label="Last name"
         ></v-text-field>
-        <v-btn color="primary">
+        <v-btn color="primary" v-on:click="createAuthor">
           Register
         </v-btn>
       </v-col>
