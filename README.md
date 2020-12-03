@@ -14,3 +14,4 @@ Tutorial Series
 10. [Spring Boot REST API CRUD With DynamoDB Tutorial](https://javatodev.com/spring-boot-dynamo-db-crud-tutorial/)
 11. [Spring Boot JWT Authentication using Spring Security](https://javatodev.com/spring-boot-jwt-authentication/)
 12. [Angular 10 CRUD with Spring Boot REST API](https://javatodev.com/angular-10-crud-with-spring-boot-rest-api/)  
+13. [Vue JS CRUD with Spring Boot REST API](https://javatodev.com/vue-js-crud-with-vuetify/)  
