@@ -21,9 +21,11 @@ Tutorial Series
 <h1 align="center">Hi 👋, I'm Chinthaka Dinadasa</h1>
 <h3 align="center">A Passionate Java Fullstack Developer from Sri Lanka and Author of JavatoDev.com</h3>
 
+<!-- <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=javatodev" alt="javatodev" /></a> </p> -->
+
 <p align="left"> <a href="https://twitter.com/spbootdeveloper" target="blank"><img src="https://img.shields.io/twitter/follow/spbootdeveloper?logo=twitter&style=for-the-badge" alt="spbootdeveloper" /></a> </p>
 
-- 👨‍💻 All of my projects are available at [https://chinthaka-dinadasa.github.io/portofolio/](https://chinthaka-dinadasa.github.io/portofolio/)
+<!-- - 👨‍💻 All of my projects are available at [https://chinthaka-dinadasa.github.io/portofolio/](https://chinthaka-dinadasa.github.io/portofolio/) -->
 
 - 📝 I regularly write articles on [http://javatodev.com/](http://javatodev.com/)
 
