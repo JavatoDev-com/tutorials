@@ -31,7 +31,7 @@ Tutorial Series
 
 - 💬 Ask me about **Spring Boot, Java, Vue JS, Angular**
 
-- 📫 How to reach me **sendtospringboot@gmail.com**
+- 📫 How to reach me **author@javatodev.com**
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/chinthakadinadasa/](https://www.linkedin.com/in/chinthakadinadasa/)
 
