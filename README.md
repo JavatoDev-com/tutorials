@@ -38,10 +38,10 @@ Tutorial Series
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Spring Boot Pagination, Sorting and Filtering](https://javatodev.com/spring-boot-pagination-sorting-and-filtering/)
 - [Vue JS CRUD with Vuetify, Axios, Spring Boot REST API](https://javatodev.com/vue-js-crud-with-vuetify/)
 - [Angular 10 CRUD with Spring Boot REST API](https://javatodev.com/angular-10-crud-with-spring-boot-rest-api/)
 - [Spring Boot JWT Authentication using Spring Security](https://javatodev.com/spring-boot-jwt-authentication/)
-- [Spring Boot REST API CRUD With DynamoDB Tutorial](https://javatodev.com/spring-boot-dynamo-db-crud-tutorial/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
