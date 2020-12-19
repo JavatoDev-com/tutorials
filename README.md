@@ -32,12 +32,16 @@ Tutorial Series
 
 - 💬 Ask me about **Spring Boot, Java, Vue JS, Angular**
 
-- 📫 How to reach me **sendtospringboot@gmail.com**
+- 📫 How to reach me **author@javatodev.com**
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/chinthakadinadasa/](https://www.linkedin.com/in/chinthakadinadasa/)
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Vue JS CRUD with Vuetify, Axios, Spring Boot REST API](https://javatodev.com/vue-js-crud-with-vuetify/)
+- [Angular 10 CRUD with Spring Boot REST API](https://javatodev.com/angular-10-crud-with-spring-boot-rest-api/)
+- [Spring Boot JWT Authentication using Spring Security](https://javatodev.com/spring-boot-jwt-authentication/)
+- [Spring Boot REST API CRUD With DynamoDB Tutorial](https://javatodev.com/spring-boot-dynamo-db-crud-tutorial/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
