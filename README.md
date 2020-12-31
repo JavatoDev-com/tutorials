@@ -38,10 +38,10 @@ Tutorial Series
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Docker Compose For Spring Boot with PostgreSQL](https://javatodev.com/docker-compose-spring-boot-postgresql/)
 - [How to Dockerize Spring Boot Application](https://javatodev.com/how-to-dockerize-spring-boot-application/)
 - [How To Change Default Port in Spring Boot](https://javatodev.com/how-to-change-default-port-in-spring-boot/)
 - [Angular Datatable with Pagination Using ag-Grid and REST API](https://javatodev.com/angular-datatable-with-pagination-using-ag-grid-and-rest-api/)
-- [Spring Boot Pagination, Sorting and Filtering](https://javatodev.com/spring-boot-pagination-sorting-and-filtering/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
