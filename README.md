@@ -44,10 +44,10 @@ Tutorial Series
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Microservices – Service Registration and Discovery With Spring Cloud Netflix Eureka](https://javatodev.com/microservices-service-registration-and-discovery-with-spring-cloud-netflix-eureka/)
 - [Building Microservices With Spring Boot – Free Course With Practical Project](https://javatodev.com/building-microservices-with-spring-boot-free-course-with-practical-project/)
 - [Multiple Datasources With Spring Boot Data JPA](https://javatodev.com/multiple-datasources-with-spring-boot-data-jpa/)
 - [How To Handle Multiple Message Properties In Spring Boot](https://javatodev.com/how-to-handle-multiple-message-properties-in-spring-boot/)
-- [Docker Compose For Spring Boot with MongoDB](https://javatodev.com/docker-compose-for-spring-boot-with-mongodb/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
