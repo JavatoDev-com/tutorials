@@ -44,10 +44,10 @@ Tutorial Series
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Microservices – Fund Transfer Service Implementation](https://javatodev.com/microservices-fund-transfer-service-implementation/)
 - [Microservices – User Service Implementation](https://javatodev.com/microservices-user-service-implementation/)
 - [Microservices – Core Banking Service Implementation](https://javatodev.com/microservices-core-banking-service-implementation/)
 - [Microservices – Authentication, and Authorization With Keycloak](https://javatodev.com/microservices-authentication-and-authorization-with-keycloak/)
-- [Microservices – Setup API Gateway Using Spring Cloud Gateway](https://javatodev.com/microservices-setup-api-gateway-using-spring-cloud-gateway/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
