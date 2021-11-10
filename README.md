@@ -44,10 +44,10 @@ Tutorial Series
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Microservices – Utility Payment Service Implementation](https://javatodev.com/microservices-utility-payment-service-implementation/)
 - [Microservices – Fund Transfer Service Implementation](https://javatodev.com/microservices-fund-transfer-service-implementation/)
 - [Microservices – User Service Implementation](https://javatodev.com/microservices-user-service-implementation/)
 - [Microservices – Core Banking Service Implementation](https://javatodev.com/microservices-core-banking-service-implementation/)
-- [Microservices – Authentication, and Authorization With Keycloak](https://javatodev.com/microservices-authentication-and-authorization-with-keycloak/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
